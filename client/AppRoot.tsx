@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import UserIcon from "./components/UserIcon";
 import UserBadgeDropdown from "./components/UserBadgeDropdown";
-import MapWrapper from "./components/MapContainer";
+import MapsContainer from "./containers/MapsContainer";
 import TripDetailsForm from "./components/TripDetailsForm/TripDetailsForm";
 import NewUserPopup from "./components/NewUserPopup";
 import UserUnknown from "./components/UserUnknown";
@@ -11,6 +11,7 @@ let hasRun = false;
 
 interface UserInfoPayload {
   countrycodes: string[] | null | undefined;
+  // eslint-disable-next-line camelcase
   facebook_id: string;
   username: string;
   id: string;
@@ -70,11 +71,11 @@ const App = () => {
           currentUser={currentUser}
         />
       ) : null}
-      <MapWrapper
+      <MapsContainer
         visited={visited}
         setVisited={setVisited}
         currentUser={currentUser}
-        setCurrentSel={setCurrentSel}
+        // setCurrentSel={setCurrentSel}
         setShowForm={setShowForm}
       />
     </>

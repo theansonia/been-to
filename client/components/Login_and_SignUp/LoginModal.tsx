@@ -54,7 +54,6 @@ const LoginModal: React.FC<any> = ({
       }),
     })
       .then((res) => {
-        console.log(res)
         if (!res.ok) {
           setWarnUser(true)
           throw new Error('Failed to log in');
@@ -62,11 +61,9 @@ const LoginModal: React.FC<any> = ({
         return res.json();
       })
       .then((res) => {
-        console.log("this is the res", res);
 
         setCurrentUser(res.username);
         setCurrentUserID(res.id);
-        console.log("this is the res", res);
         setVisited(res.countrycodes || []);
       })
       .catch((err) => {

@@ -1,9 +1,11 @@
+/* eslint-disable import/order */
 import React from "react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import styled from "styled-components";
 import Map from "./ManualMap/Map";
 import MapTools, { MapToolsProps } from "./ManualMap/MapTools";
 import SearchBar, { SearchBarProps, ZPPState } from "./ManualMap/SearchBar";
+
 
 const FullContainer = styled.div`
   position: fixed;
@@ -25,6 +27,7 @@ interface MapContainerProps {
   setShowForm: (code: boolean) => void;
 }
 
+
 const MapContainer = ({
   visited,
   setVisited,
@@ -36,6 +39,7 @@ const MapContainer = ({
     if (!(evt.target as HTMLElement)?.classList.contains("datamaps-subunit"))
       setCurrentSel("");
   };
+
   return (
     <FullContainer onClick={handleClick}>
       <TransformWrapper

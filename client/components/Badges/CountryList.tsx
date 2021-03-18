@@ -33,7 +33,6 @@ const CountryList = ({
       setCountries([match]);
     }
   };
-  console.log(countries);
   const handleReset = () => {
     setCountries(visited);
   };

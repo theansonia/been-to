@@ -81,7 +81,6 @@ const FormInput: React.FC<any> = ({
     })
       .then((data) => data.json())
       .then((res) => {
-        console.log("this is the res", res);
         setOpen(true);
         setShowForm(false);
       })
